@@ -1,21 +1,38 @@
-const imgs = document.querySelectorAll('.img-select a');
-const imgBtns = [...imgs];
-let imgId = 1;
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = [];
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
 
-imgBtns.forEach((imgItem) => {
-    imgItem.addEventListener('click', (event) => {
-        event.preventDefault();
-        imgId = parseInt(imgItem.dataset.id, 10); // Ensure imgId is a number
-        slideImage();
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-product-id');
+            const productName = button.getAttribute('data-product-name');
+            const productPrice = parseFloat(button.getAttribute('data-product-price'));
+
+            addToCart({ id: productId, name: productName, price: productPrice });
+        });
     });
+
+    function addToCart(product) {
+        const existingProductIndex = cartItems.findIndex(item => item.id === product.id);
+        if (existingProductIndex > -1) {
+            cartItems[existingProductIndex].quantity += 1;
+        } else {
+            product.quantity = 1;
+            cartItems.push(product);
+        }
+        renderCart();
+    }
+
+    function renderCart() {
+        cartItemsList.innerHTML = '';
+        let total = 0;
+        cartItems.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            cartItemsList.appendChild(li);
+            total += item.price * item.quantity;
+        });
+        cartTotal.textContent = total.toFixed(2);
+    }
 });
-
-function slideImage() {
-    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-    document.querySelector('.img-showcase').style.transform = `translateX(${-(imgId - 1) * displayWidth}px)`;
-}
-
-window.addEventListener('resize', slideImage);
-
-// Ensure to run slideImage on page load to set the initial position
-window.addEventListener('load', slideImage);
