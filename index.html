@@ -1,44 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Task App 2024</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffin Service Website</title>
+    <head>
+        <!-- Other meta tags and links -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-	
-	<main>
+    <header>
+        <nav>
+            <div class="logo">Food Hub</div>
+            <input type="text" id="product-search" placeholder="Search for products...">
+            
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                
 
-		<div class="app">
+                <li><a href="#" onclick="showLogin()">Login</a></li>
+            </ul>
 
-			<header>
-				<h1>Your Todos</h1>
-				<button id="create">Add new todo</button>
-			</header>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="auth">
+            <div class="auth-container" id="login">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+            </div>
+            
+            <div class="auth-container" id="signup">
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" name="newUsername" required>
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </section>
+         <!-- main Page -->
 
-			<div class="todo-list" id="list">
+         <div class="main">
+            <div class="text">
+                <h1>Simple & Tasty Breakfast</h1>
 
-				<!-- <div class="item">
-					<input type="checkbox" />
-					<input 
-						type="text" 
-						value="Todo content goes here" 
-						disabled />
-					<div class="actions">
-						<button class="material-icons">edit</button>
-						<button class="material-icons remove-btn">remove_circle</button>
-					</div>
-				</div> -->
+            </div>
+            <img src="https://eventorganizers.in/wp-content/uploads/2022/08/tiffins-live-stall-in-hyderabad-for-all-parties.webp" alt="" width="250px" height="300px">
+        </div>
+        
+        <section id="menu">
+            <h1>Menu</h1>
+            <div class="crd">
 
-			</div>
+            <div class="product" data-id="1" data-name="Dosa" data-price="50.00">
+                <img src="https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__1200_0_0_0_auto.jpg" alt="" width="270px" height="250px">
+                <h2>dosa</h2>
 
-		</div>
 
-	</main>
+                <p>Price: 50.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2" data-name="puri" data-price="60.00">
+                <img src="https://cdn.cdnparenting.com/articles/2020/02/26144721/PURI-BHAJI-RECIPE-1024x700.jpg" alt="" width="270px" height="250px">
+                <h2>puri</h2>
 
-	<script src="main.js"></script>
+
+                <p>Price: 60.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="3" data-name="idly" data-price="40.00">
+
+                <img src="https://www.awesomecuisine.com/wp-content/uploads/2007/11/Idli-with-sambar-and-chutney.jpg" alt="" width="270px" height="250px">
+
+                <h2>idly</h2>
+
+                <p>Price: 40.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+                
+            </div>
+            <div class="product" data-id="4" data-name="chapati" data-price="70.00">
+                <img src="https://cookingfromheart.com/wp-content/uploads/2020/04/Sourdough-Roti-6.jpg" alt="" width="270px" height="250px">
+                <h2>chapati</h2>
+
+
+                <p>Price: 70.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="crd">
+
+            <div class="product" data-id="4" data-name="vada" data-price="40.00">
+                <img src="https://c.ndtvimg.com/2023-08/cds65egg_medu-vada_625x300_08_August_23.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=675" alt="" width="270px" height="250px">
+                <h2>vada</h2>
+
+
+                <p>Price: 40.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            
+            <div class="product" data-id="5" data-name="Bonda" data-price="45.00">
+                <img src="https://www.awesomecuisine.com/wp-content/uploads/2015/08/mangalore-bonda.jpg" alt="" width="270px" height="250px">
+                <h2>Bonda</h2>
+
+
+                <p>Price: 45.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="6" data-name="pesarattu upma" data-price="70.00">
+                <img src="https://res.cloudinary.com/roundglass/image/upload/w_1400,f_auto/v1697469276/rg/collective/media/rg-food-in-upma-pesarattu-rakesh-raghunathan-may2022-001-16x9-1697469275094.jpg" alt="" width="270px" height="250px"s>
+                <h2>pesarattu</h2>
+
+
+                <p>Price: 70.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+        
+                </div>
+                <div class="product" data-id="6" data-name="uttapam" data-price="70.00">
+                    <img src="https://www.cookwithkushi.com/wp-content/uploads/2016/01/vegetable_uttapam_dosa_recipe.jpg" alt="" width="270px" height="250px">
+                    <h2>uttampam</h2>
+    
+    
+                    <p>Price: 70.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+            
+                    </div>
+                    
+            
+            </div>
+            <div class="crd">
+
+                <div class="product" data-id="9" data-name="tea" data-price="30.00">
+                    <img src="https://www.hindustantimes.com/ht-img/img/2023/04/13/1600x900/Though-it-makes-everyone-in-the-house-happy-initia_1681418117083.jpg" alt="" width="270px" height="250px">
+                    <h2>tea</h2>
+    
+    
+                    <p>Price: 30.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-id="10" data-name="coffee" data-price="30.00">
+                    <img src="https://images.indianexpress.com/2024/03/indian-filter-coffee.jpg" alt="" width="270px" height="250px">
+                    <h2>coffee</h2>
+    
+    
+                    <p>Price: 30.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-id="11" data-name="sandwich" data-price="80.00">
+    
+                    <img src="https://images.arla.com/recordid/15F33607-F6D9-4952-B6AA210D3033BF14/club-sandwich1.jpg?format=jpg&width=1200&height=630&mode=crop" alt="" width="270px" height="250px">
+    
+                    <h2>sandwich</h2>
+    
+                    <p>Price: 80.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    
+                </div>
+                <div class="product" data-id="12" data-name="bread toast" data-price="70.00">
+                    <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/20/1/0151838_French-Toast-Bananas-Foster_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1382541363225.jpeg" alt="" width="270px" height="250px">
+                    <h2>bread toast</h2>
+    
+    
+                    <p>Price: 70.00</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <tr>
+            <td>
+                <div class="head">
+                    <h1>Our <span>Blogs</span></h1>
+                </div>
+                <div class="crd">
+                    <div class="blog">
+                        <img src="https://assets.vogue.com/photos/63d169f727f1d528635b4287/16:9/w_3631,h_2042,c_limit/GettyImages-1292563627.jpg" alt="" width="250px" height="250px">
+                        <h2>Fact About Indian Food</h2>
+                    <a href="https://www.littleindiaofdenver.com/blog/7-facts-you-never-knew-about-indian-food/">Tap to know</a>
+                    </div>
+                    <div class="blog">
+                        <img src="https://1.bp.blogspot.com/-eQS1dHPKVVg/VeS4c4ROE1I/AAAAAAAAFlw/P5HbhBt9pX8/s1600/Recently%2BUpdated.jpg" alt="" width="250px" height="250px">
+                        <h2>Diffrent Type of Dosas</h2>
+                        <a href="https://recipes.timesofindia.com/web-stories/10-types-of-dosa-one-cant-resist/photostory/105483023.cms">Tap to know</a>
+                    </div>
+                    <div class="blog">
+                        <img src="https://lh6.ggpht.com/-hmiC0HbBqmc/U227kXzjbZI/AAAAAAAAa2s/7jd9p0aBmWQ/s1600/Idli%252520varieties%25255B3%25255D.jpg" alt="" width="250px" height="250px">
+                        <h2>Delicious Idly Recipe</h2>
+                      <a href="https://hebbarskitchen.com/how-to-make-soft-idli-wet-grinder/">Tap to knows</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+         
+        
+        <section id="order">
+            <h2>Your Cart </h2>
+            <div class="cart">
+                <p>Cart is empty.</p>
+            </div>
+            <button class="order-btn" onclick="placeOrder()">Order Now</button>
+        </section>
+        
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <div class="review-form">
+                <h3>Leave a Review</h3>
+                <form>
+                    <label for="review">Your Review:</label>
+                    <textarea id="review" name="review" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="review-list">
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to Tiffin Service, your go-to platform for home-cooked meals delivered right to your doorstep. We connect you with local tiffin service providers who offer a variety of delicious and nutritious dishes made with love and care. Our mission is to provide convenient, affordable, and healthy meal options to busy individuals and families.</p>
+            <p>Our team is passionate about promoting home-cooked meals and supporting local businesses. We believe in the power of good food to bring people together and improve overall well-being. Whether you're looking for a one-time meal or a regular tiffin service, we are here to cater to your needs.</p>
+            <p>Thank you for choosing Tiffin Service. We look forward to serving you!</p>
+    </main>
+    <!--------------------------------------contact-------------------------------------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>foodhub123@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>0000000000</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="copyright">
+        <p> copyright 2024 <i class="fa-solid fa-heart"></i> Food Hub</p>
+    </div>
+</div>
+
+
+
+    
+    <script src="index.js"></script>
 </body>
 </html>
